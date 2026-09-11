@@ -153,7 +153,7 @@
                 cityEl.innerHTML = `<span class="material-icons">location_on</span> ${geoData.city}, ${geoData.region}`;
             }
 
-            const wtRes = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,weather_code&daily=weather_code,temperature_2m_max,temperature_2m_min&temperature_unit=fahrenheit&timezone=auto`);
+            const wtRes = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,weather_code&daily=weather_code,temperature_2m_max,temperature_2m_min&temperature_unit=celsius&timezone=auto`);
             if (!wtRes.ok) throw new Error('Weather fetch failed');
             const data = await wtRes.json();
 
